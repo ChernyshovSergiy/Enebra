@@ -34,7 +34,7 @@ class GenerateMenus
             }
             return $item;
         });
-        $menu = Menu::make('myNav', function ($m) use ($information_menu){
+        $menu = \Menu::make('myNav', function ($m) use ($information_menu){
             $locale = LaravelLocalization::getCurrentLocale();
             foreach ($information_menu as $item) {
                 if ((int)$item->parent === 0){

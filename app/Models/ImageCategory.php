@@ -4,6 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Models\ImageCategory
+ *
+ * @property int $id
+ * @property string $title
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ImageCategory newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ImageCategory newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ImageCategory query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ImageCategory whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ImageCategory whereTitle($value)
+ * @mixin \Eloquent
+ */
 class ImageCategory extends Model
 {
     protected $fillable = [

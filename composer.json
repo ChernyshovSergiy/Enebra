@@ -10,17 +10,18 @@
     "require": {
         "php": "^7.2",
         "ext-json": "*",
+        "ext-pdo": "*",
         "caouecs/laravel-lang": "~4.0",
         "cviebrock/eloquent-sluggable": "^6.0",
         "doctrine/dbal": "^2.9",
         "fideloper/proxy": "^4.0",
+        "jeroennoten/laravel-adminlte": "^1.27",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^6.0",
         "lavary/laravel-menu": "^1.7",
         "mcamara/laravel-localization": "^1.4",
-        "predis/predis": "^1.1",
-        "ext-pdo": "*"
+        "predis/predis": "^1.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.6",
