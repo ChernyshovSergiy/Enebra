@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('adminlte::page')
 @section('content')
 
     <!-- Content Wrapper. Contains page content -->
@@ -10,7 +10,7 @@
                 <small>@lang('admin.it_add_question_here')</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> @lang('admin.home')</a></li>
+                <li><a href="{{route('admin')}}"><i class="fas fa-fw fa-tachometer-alt"></i> @lang('admin.home')</a></li>
                 <li><a href="{{route('faq_questions.index')}}"><i class="fa fa-question-circle"></i> @lang('admin.listing_questions')</a></li>
                 <li class="active">@lang('admin.add_question')</li>
             </ol>

@@ -1,0 +1,11 @@
+@media (min-width: 992px) {
+    .container-fluid {
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+    .col-md-3 {
+        display: inline-block;
+        vertical-align: top;
+        float: none;
+    }
+}

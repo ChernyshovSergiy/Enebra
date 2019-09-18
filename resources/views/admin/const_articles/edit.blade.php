@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('adminlte::page')
 
 @section('content')
 
@@ -11,7 +11,7 @@
                 <small>@lang('admin.it_edit_article_here')</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> @lang('admin.home')</a></li>
+                <li><a href="{{route('admin')}}"><i class="fas fa-fw fa-tachometer-alt"></i> @lang('admin.home')</a></li>
                 <li><a href="{{route('const_articles.index')}}"><i class="fa fa-gavel"></i> @lang('admin.listing_articles')</a></li>
                 <li class="active">@lang('admin.edit_article')</li>
             </ol>

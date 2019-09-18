@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('adminlte::page')
 
 @section('content')
 
@@ -11,7 +11,7 @@
                 <small>@lang('admin.it_all_documents_here')</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> @lang('admin.home')</a></li>
+                <li><a href="{{route('admin')}}"><i class="fas fa-fw fa-tachometer-alt"></i> @lang('admin.home')</a></li>
                 <li class="active">@lang('admin.id_documents')</li>
             </ol>
         </section>
@@ -47,11 +47,12 @@
                                 <td>{{ $id_document->id }}</td>
                                 <td>{!! $id_document->name ? $id_document->name->$locale : '' !!}</td>
                                 <td>
-                                    <a href="{{route('id_documents.edit', $id_document->id)}}" class="text-yellow fa fa-pencil"></a>
+                                    <a href="{{route('id_documents.edit', $id_document->id)}}" class="text-yellow fas fa-pen-alt" style="float:left;"></a>
+                                    <span style="float:left;">&emsp;or&emsp;</span>
                                     {{ Form::open(['route'=>['id_documents.destroy', $id_document->id], 'method'=>'delete']) }}
-                                    <button onclick="return confirm('are you sure?')" type="submit" class="delete">
-                                        <i class="text-red fa fa-remove"></i>
-                                    </button>
+                                    <a onclick="return confirm('are you sure?')" type="submit" class="delete" style="float:left; cursor: pointer">
+                                        <i class="text-red fas fa-trash-alt"></i>
+                                    </a>
                                     {{ Form::close() }}
                                 </td>
                             </tr>

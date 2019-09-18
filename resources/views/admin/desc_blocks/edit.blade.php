@@ -11,7 +11,7 @@
                 <small>@lang('admin.it_edit_des_block_here')</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> @lang('admin.home')</a></li>
+                <li><a href="{{route('admin')}}"><i class="fas fa-fw fa-tachometer-alt"></i> @lang('admin.home')</a></li>
                 <li><a href="{{route('desc_blocks.index')}}"><i class="fa fa-th-large"></i> @lang('admin.listing_des_blocks')</a></li>
                 <li class="active">@lang('admin.edit_des_block')</li>
             </ol>

@@ -139,11 +139,189 @@ return [
             'can'  => 'manage-blog',
         ],
         [
+            'text'        => 'dashboard',
+            'url'         => 'admin',
+            'icon'        => 'fas fa-fw fa-tachometer-alt',
+        ],
+        [
+            'text'        => 'menu',
+            'url'         => 'admin/inf_menus',
+            'icon'        => 'fas fa-fw fa-bars',
+//            'label'       => 4,
+//            'label_color' => 'success',
+        ],
+        [
             'text'        => 'pages',
-            'url'         => 'admin/pages',
+            'url'         => 'admin/inf_pages',
             'icon'        => 'far fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'purposes',
+            'url'         => 'admin/purposes',
+            'icon'        => 'far fa-dot-circle',
+        ],
+        [
+            'text'        => 'what_to_do',
+            'url'         => 'admin/what_to_do_points',
+            'icon'        => 'fas fa-map-marker-alt',
+        ],
+        [
+            'text'        => 'terms',
+            'url'         => 'admin/terms',
+            'icon'        => 'fas fa-file-alt',
+        ],
+        [
+            'text'    => 'faq',
+            'icon'    => 'far fa-question-circle',
+            'submenu' => [
+                [
+                    'text' => 'faq_questions',
+                    'url'  => 'admin/faq_questions',
+                    'icon' => 'fas fa-question-circle',
+                ],
+                [
+                    'text' => 'faq_answers',
+                    'url'  => 'admin/faq_answers',
+                    'icon' => 'fas fa-info-circle',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'constitution',
+            'icon'    => 'fas fa-balance-scale',
+            'submenu' => [
+                [
+                    'text' => 'const_sections',
+                    'url'  => 'admin/const_sections',
+                    'icon' => 'fas fa-balance-scale-right',
+                ],
+                [
+                    'text' => 'const_articles',
+                    'url'  => 'admin/const_articles',
+                    'icon' => 'fas fa-gavel',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'images',
+            'icon'    => 'far fa-images',
+            'submenu' => [
+                [
+                    'text' => 'images_categories',
+                    'url'  => 'admin/image_categories',
+                    'icon' => 'fas fa-list-alt',
+                ],
+                [
+                    'text' => 'images',
+                    'url'  => 'admin/images',
+                    'icon' => 'fas fa-image',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'descriptions',
+            'icon'    => 'fas fa-th-large',
+            'submenu' => [
+                [
+                    'text' => 'des_blocks',
+                    'url'  => 'admin/desc_blocks',
+                    'icon' => 'fas fa-th-large',
+                ],
+                [
+                    'text' => 'descriptions',
+                    'url'  => 'admin/descriptions',
+                    'icon' => 'fas fa-bars',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'components',
+            'icon'    => 'fas fa-chart-pie',
+            'submenu' => [
+                [
+                    'text' => 'languages',
+                    'url'  => 'admin/languages',
+                    'icon' => 'fas fa-globe',
+                ],
+                [
+                    'text' => 'documents_id',
+                    'url'  => 'admin/id_documents',
+                    'icon' => 'far fa-newspaper',
+                ],
+                [
+                    'text' => 'countries',
+                    'url'  => 'admin/countries',
+                    'icon' => 'fas fa-flag',
+                ],
+                [
+                    'text' => 'social_links',
+                    'url'  => 'admin/social_links',
+                    'icon' => 'fas fa-users',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'home_page',
+            'icon'    => 'fas fa-home',
+            'submenu' => [
+                [
+                    'text' => 'introduction_points',
+                    'url'  => 'admin/introduction_points',
+                    'icon' => 'fas fa-map-marker-alt',
+                ],
+                [
+                    'text' => 'introduction',
+                    'url'  => 'admin/introductions',
+                    'icon' => 'far fa-list-alt',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'active_plan',
+            'icon'    => 'far fa-clock',
+            'submenu' => [
+                [
+                    'text' => 'phases_plan',
+                    'url'  => 'admin/inf_plan_phases',
+                    'icon' => 'fas fa-qrcode',
+                ],
+                [
+                    'text' => 'phases_plan_directions',
+                    'url'  => 'admin/inf_plan_phase_sections',
+                    'icon' => 'fas fa-map-signs',
+                ],
+                [
+                    'text' => 'plan_points',
+                    'url'  => 'admin/inf_plan_phase_section_points',
+                    'icon' => 'fas fa-map-pin',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'video',
+            'icon'    => 'far fa-play-circle',
+            'submenu' => [
+                [
+                    'text' => 'video_groups',
+                    'url'  => 'admin/inf_video_groups',
+                    'icon' => 'far fa-file-video',
+                ],
+                [
+                    'text' => 'video_group_sectors',
+                    'url'  => 'admin/inf_video_group_sections',
+                    'icon' => 'fas fa-file-audio',
+                ],
+                [
+                    'text' => 'videos',
+                    'url'  => 'admin/inf_videos',
+                    'icon' => 'fab fa-youtube',
+                ],
+            ],
+        ],
+        [
+            'text' => 'subscribers',
+            'url'  => 'admin/subscribers',
+            'icon' => 'fas fa-user-plus',
         ],
         ['header' => 'account_settings'],
         [
@@ -313,6 +491,22 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+        [
+            'name' => 'bootstrap-wysihtml5',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js',
                 ],
             ],
         ],

@@ -56,8 +56,5 @@
 
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
-
-{{--        <script src="https://maps.googleapis.com/maps/api/js?v=3.21&key=AIzaSyDuobmu5uxO3e-AsgdFVa2LoDA32fPagks&language=en" type="text/javascript"></script>--}}
-
     </body>
 </html>

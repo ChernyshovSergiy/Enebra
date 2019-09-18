@@ -1,20 +1,22 @@
-@extends('admin.layout')
+@extends('adminlte::page')
+
+@section('title', 'Menu')
+
+@section('content_header')
+    <h1>
+        @lang('admin.listing_menu_points')
+        <small>@lang('admin.it_all_menu_points_here')</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="{{route('admin')}}"><i class="fas fa-fw fa-tachometer-alt"></i> @lang('admin.home')</a></li>
+        <li class="active">@lang('admin.listing_menu_points')</li>
+    </ol>
+@stop
 
 @section('content')
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                @lang('admin.listing_menu_points')
-                <small>@lang('admin.it_all_menu_points_here')</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> @lang('admin.home')</a></li>
-                <li class="active">@lang('admin.listing_menu_points')</li>
-            </ol>
-        </section>
+{{--    <div class="content-wrapper">--}}
 
         <!-- Main content -->
         <section class="content">
@@ -51,20 +53,21 @@
                                     <td>{!! $point->title ? $point->title->$locale : '' !!}</td>
                                     <td>
                                         @if($point->is_active === 1)
-                                            <a href="/admin/inf_menus/toggle/{{ $point->id }}" class="text-green fa fa-thumbs-o-up"></a>
+                                            <a href="/admin/inf_menus/toggle/{{ $point->id }}" class="text-green fas fa-fw fa-thumbs-up"></a>
                                         @else
-                                            <a href="/admin/inf_menus/toggle/{{ $point->id }}" class="text-muted fa fa-lock"></a>
+                                            <a href="/admin/inf_menus/toggle/{{ $point->id }}" class="text-muted fas fa-fw fa-lock"></a>
                                         @endif
                                     </td>
                                     <td>{{ $point->url }}</td>
                                     <td>{{ $point->getParent() }}</td>
                                     <td>{{ $point->sort }}</td>
                                     <td>
-                                        <a href="{{route('inf_menus.edit', $point->id)}}" class="text-yellow fa fa-pencil"></a>
+                                        <a href="{{route('inf_menus.edit', $point->id)}}" class="text-yellow fas fa-pen-alt" style="float:left;"></a>
+                                        <span style="float:left;">&emsp;or&emsp;</span>
                                         {{ Form::open(['route'=>['inf_menus.destroy', $point->id], 'method'=>'delete']) }}
-                                        <button onclick="return confirm('are you sure?')" type="submit" class="delete">
-                                        <i class="text-red fa fa-remove"></i>
-                                        </button>
+                                        <a onclick="return confirm('are you sure?')" type="submit" class="delete" style="float:left; cursor: pointer">
+                                            <i class="text-red fas fa-trash-alt"></i>
+                                        </a>
                                         {{ Form::close() }}
                                     </td>
                                 </tr>
@@ -78,7 +81,15 @@
             {{Form::close()}}
         </section>
         <!-- /.content -->
-    </div>
+{{--    </div>--}}
     <!-- /.content-wrapper -->
 
 @endsection
+
+@section('js')
+    <script>
+        $(function () {
+            $('#example1').DataTable()
+        })
+    </script>
+@stop

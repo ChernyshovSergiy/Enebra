@@ -11,13 +11,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id
  * @property mixed|null $content
  * @property int|null $views_count
- * @property \Carbon\Carbon|null $created_at
- * @property \Carbon\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Term whereContent($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Term whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Term whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Term whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Term whereViewsCount($value)
  * @mixin \Eloquent
  */
 class Term extends Model
@@ -35,6 +28,8 @@ class Term extends Model
         'right_textarea',
         'down_textarea'
     ];
+
+    public $timestamps = false;
 
     public function getTextColumnsForTranslate(): array
     {
@@ -55,7 +50,7 @@ class Term extends Model
         $term = self::find($id);
         $term->fill($request->all());
         $term->setContent($request, $id);
-        $term->update($request->all());
+        $term->update();
     }
 
     public function setContent($request, $id): void

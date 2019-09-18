@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('adminlte::page')
 
 @section('content')
 
@@ -11,7 +11,7 @@
                 <small>@lang('admin.it_add_video_group_here')</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> @lang('admin.home')</a></li>
+                <li><a href="{{route('admin')}}"><i class="fas fa-fw fa-tachometer-alt"></i> @lang('admin.home')</a></li>
                 <li><a href="{{route('inf_video_groups.index')}}"><i class="fa fa-file-text"></i> @lang('admin.listing_video_groups')</a></li>
                 <li class="active">@lang('admin.add_video_group')</li>
             </ol>

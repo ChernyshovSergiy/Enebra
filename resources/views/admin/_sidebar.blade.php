@@ -3,7 +3,7 @@
     <li class="header">@lang('admin.main_navigation')</li>
     <li>
         <a href="{{route('admin')}}">
-            <i class="fa fa-dashboard"></i> <span>@lang('admin.dashboard')</span>
+            <i class="fas fa-fw fa-tachometer-alt"></i> <span>@lang('admin.dashboard')</span>
             <span class="pull-right-container"></span>
         </a>
     </li>

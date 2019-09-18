@@ -4,6 +4,7 @@ namespace App\Traits\Methods;
 
 use App\Models\Image;
 use App\Models\Language;
+use Arr;
 
 trait BuildJson
 {
@@ -46,7 +47,7 @@ trait BuildJson
                     $lang[$language] = $request->get($block . ':' . $language);
                 }
             }
-            $text = array_add($text, $block, $lang);
+            $text = Arr::add($text, $block, $lang);
         }
         return json_encode($text);
     }

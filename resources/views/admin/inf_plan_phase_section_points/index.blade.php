@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('adminlte::page')
 
 @section('content')
 
@@ -11,7 +11,7 @@
                 <small>@lang('admin.the_plan_phases_sec_point_here')</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> @lang('admin.home')</a></li>
+                <li><a href="{{route('admin')}}"><i class="fas fa-fw fa-tachometer-alt"></i> @lang('admin.home')</a></li>
                 <li class="active"> @lang('admin.listing_plan_phases_sec_point')</li>
             </ol>
         </section>
@@ -57,16 +57,17 @@
                                     @endif
                                 </td>
                                 <td>{!! $plan_phase_section_point->entry ? $plan_phase_section_point->entry->point->$locale : ''  !!}</td>
-                                <td>{!! $plan_phase_section_point->entry ? str_limit($plan_phase_section_point->entry->description->$locale, 100 ) : ''  !!}</td>
+                                <td>{!! $plan_phase_section_point->entry ? Str::limit($plan_phase_section_point->entry->description->$locale, 100 ) : ''  !!}</td>
                                 <td>{{ $plan_phase_section_point->getPhase()}}</td>
                                 <td>{{ $plan_phase_section_point->getSection()}}</td>
                                 <td>{{ $plan_phase_section_point->sort }}</td>
                                 <td>
-                                    <a href="{{route('inf_plan_phase_section_points.edit', $plan_phase_section_point->id)}}" class="text-yellow fa fa-pencil"></a>
+                                    <a href="{{route('inf_plan_phase_section_points.edit', $plan_phase_section_point->id)}}" class="text-yellow fas fa-pen-alt" style="float:left;"></a>
+                                    <span style="float:left;">&emsp;or&emsp;</span>
                                     {{ Form::open(['route'=>['inf_plan_phase_section_points.destroy', $plan_phase_section_point->id], 'method'=>'delete']) }}
-                                    <button onclick="return confirm('are you sure?')" type="submit" class="delete">
-                                        <i class="text-red fa fa-remove"></i>
-                                    </button>
+                                    <a onclick="return confirm('are you sure?')" type="submit" class="delete" style="float:left; cursor: pointer">
+                                        <i class="text-red fas fa-trash-alt"></i>
+                                    </a>
                                     <!-- Button trigger modal -->
                                     {{--<button type="button" class="delete" data-toggle="modal" data-target="#modal-default">--}}
                                         {{--<i class="fa fa-remove"></i>--}}

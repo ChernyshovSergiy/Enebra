@@ -11,7 +11,7 @@
                 <small>@lang('admin.it_edit_video_here')</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> @lang('admin.home')</a></li>
+                <li><a href="{{route('admin')}}"><i class="fas fa-fw fa-tachometer-alt"></i> @lang('admin.home')</a></li>
                 <li><a href="{{route('inf_videos.index')}}"><i class="fa fa-map-pin"></i> @lang('admin.listing_videos')</a></li>
                 <li class="active">@lang('admin.edit_video')</li>
             </ol>

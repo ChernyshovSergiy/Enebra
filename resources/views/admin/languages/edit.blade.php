@@ -11,7 +11,7 @@
                 <small>@lang('admin.it_edit_language_here')</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> @lang('admin.home')</a></li>
+                <li><a href="{{route('admin')}}"><i class="fas fa-fw fa-tachometer-alt"></i> @lang('admin.home')</a></li>
                 <li><a href="{{route('languages.index')}}"><i class="fa fa-image"></i> @lang('admin.listing_language')</a></li>
                 <li class="active">@lang('admin.edit_language')</li>
             </ol>

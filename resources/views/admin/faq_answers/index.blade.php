@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('adminlte::page')
 @section('content')
 
     <!-- Content Wrapper. Contains page content -->
@@ -10,7 +10,7 @@
                 <small>@lang('admin.it_all_answers_here')</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> @lang('admin.home')</a></li>
+                <li><a href="{{route('admin')}}"><i class="fas fa-fw fa-tachometer-alt"></i> @lang('admin.home')</a></li>
                 <li class="active">@lang('admin.listing_answers')</li>
             </ol>
         </section>
@@ -47,18 +47,19 @@
                         @foreach($answers as $answer)
                             <tr>
                                 <td>{{ $answer->id }}</td>
-                                <td>{!! str_limit($answer->getQuestion(), 40, ' &raquo') !!}</td>
-                                <td>{!! $answer->answer ? str_limit($answer->answer->$locale, 100, ' &raquo') : '' !!}</td>
+                                <td>{!! Str::limit($answer->getQuestion(), 40, ' &raquo') !!}</td>
+                                <td>{!! $answer->answer ? Str::limit($answer->answer->$locale, 100, ' &raquo') : '' !!}</td>
                                 <td>{{ $answer->sort }}</td>
                                 <td>{{ $answer->getOriginLang() }}</td>
                                 <td>{{ $answer->getUserName() }}</td>
                                 <td>
                                     {{--<a href="{{route('introduction_points.show', $inf_intr_point->id)}}" class="fa fa-eye"></a>--}}
-                                    <a href="{{route('faq_answers.edit', $answer->id)}}" class="text-yellow fa fa-pencil"></a>
+                                    <a href="{{route('faq_answers.edit', $answer->id)}}" class="text-yellow fas fa-pen-alt" style="float:left;"></a>
+                                    <span style="float:left;">&emsp;or&emsp;</span>
                                     {{ Form::open(['route'=>['faq_answers.destroy', $answer->id], 'method'=>'delete']) }}
-                                    <button onclick="return confirm('are you sure?')" type="submit" class="delete">
-                                        <i class="text-red fa fa-remove"></i>
-                                    </button>
+                                    <a onclick="return confirm('are you sure?')" type="submit" class="delete" style="float:left; cursor: pointer">
+                                        <i class="text-red fas fa-trash-alt"></i>
+                                    </a>
                                     {{ Form::close() }}
                                 </td>
                             </tr>

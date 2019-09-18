@@ -28,16 +28,16 @@ mix.scripts([
     'storage/frontend/js/jquery-ui.js',
     'node_modules/jquery-backstretch/jquery.backstretch.js',
     'node_modules/jquery-parallax.js/parallax.min.js',
-    'storage/frontend/js/jquery.kwicks.js',
+    'storage/frontend/js/jquery.kwicks.min.js',
     'storage/frontend/js/bootstrap.min.js',
-    'node_modules/owl.carousel/dist/owl.carousel.min.js',
+    '/home/enebra/PhpstormProjects/Enebra/storage/frontend/js/owl.carousel.min.js',
     'node_modules/vegas/dist/vegas.min.js',
     'storage/frontend/js/tinymce.min.js',
     'node_modules/toastr/build/toastr.min.js',
     'storage/frontend/js/script.js',
     'storage/frontend/js/scripts.js',
     'storage/frontend/js/shared.js',
-    'storage/frontend/js/signup.js',
+    // 'storage/frontend/js/signup.js',
     'storage/frontend/js/functions.js',
 ], 'public/js/frontend.js');
 
@@ -56,4 +56,7 @@ mix.copy('storage/frontend/img', 'public/img');
 mix.copy('storage/frontend/css/images', 'public/images');
 mix.copy('storage/frontend/favicon.ico', 'public/favicon.ico');
 mix.copy('storage/frontend/robots.txt', 'public/robots.txt');
-mix.copy('node_modules/vegas/dist/overlays', 'public/overlays');
+mix.copy('node_modules/vegas/dist/overlays', 'public/js/overlays');
+mix.copy('resources/sass/container_fluid.css', 'public/css/container_fluid.css');
+mix.copy('storage/bower_components/ckeditor', 'public/ckeditor');
+mix.copy('storage/bootstrap-wysihtml5', 'public/bootstrap-wysihtml5');

@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('adminlte::page')
 
 @section('content')
 
@@ -11,7 +11,7 @@
                 <small>@lang('admin.it_all_text_blocks_here')</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> @lang('admin.home')</a></li>
+                <li><a href="{{route('admin')}}"><i class="fas fa-fw fa-tachometer-alt"></i> @lang('admin.home')</a></li>
                 <li class="active">@lang('admin.listing_blocks')</li>
             </ol>
         </section>
@@ -59,15 +59,15 @@
                             <tr>
                                 <td>{{ $text_block->id }}</td>
                                 <td>{{ $text_block->getBlockTitle() }}</td>
-                                <td>{!! $text_block->content ? str_limit($text_block->content->title->$locale, 20 ) : '' !!}</td>
-                                <td>{!! $text_block->content ? str_limit($text_block->content->sub_title->$locale, 20 ) : '' !!}</td>
-                                <td>{!! $text_block->content ? str_limit($text_block->content->italic_text->$locale, 20 ) : '' !!}</td>
-                                <td>{!! $text_block->content ? str_limit($text_block->content->bold_text->$locale, 20 ) : '' !!}</td>
-                                <td>{!! $text_block->content ? str_limit($text_block->content->regular_text->$locale, 20 ) : '' !!}</td>
-                                <td>{!! $text_block->content ? str_limit($text_block->content->image_text_1->$locale, 20 ) : '' !!}</td>
-                                <td>{!! $text_block->content ? str_limit($text_block->content->image_text_2->$locale, 20 ) : '' !!}</td>
-                                <td>{!! $text_block->content ? str_limit($text_block->content->link_text->$locale, 20 ) : '' !!}</td>
-                                <td>{!! $text_block->content ? str_limit($text_block->content->link->$locale, 20 ) : '' !!}</td>
+                                <td>{!! $text_block->content ? Str::limit($text_block->content->title->$locale, 20 ) : '' !!}</td>
+                                <td>{!! $text_block->content ? Str::limit($text_block->content->sub_title->$locale, 20 ) : '' !!}</td>
+                                <td>{!! $text_block->content ? Str::limit($text_block->content->italic_text->$locale, 20 ) : '' !!}</td>
+                                <td>{!! $text_block->content ? Str::limit($text_block->content->bold_text->$locale, 20 ) : '' !!}</td>
+                                <td>{!! $text_block->content ? Str::limit($text_block->content->regular_text->$locale, 20 ) : '' !!}</td>
+                                <td>{!! $text_block->content ? Str::limit($text_block->content->image_text_1->$locale, 20 ) : '' !!}</td>
+                                <td>{!! $text_block->content ? Str::limit($text_block->content->image_text_2->$locale, 20 ) : '' !!}</td>
+                                <td>{!! $text_block->content ? Str::limit($text_block->content->link_text->$locale, 20 ) : '' !!}</td>
+                                <td>{!! $text_block->content ? Str::limit($text_block->content->link->$locale, 20 ) : '' !!}</td>
                                 <td>
                                     <img src="{{ $text_block->getBGImage() }}" alt="" width="60">
                                 </td>
@@ -81,11 +81,12 @@
                                 <td>{{ $text_block->sort }}</td>
                                 <td>
                                     {{--<a href="{{route('introduction_points.show', $inf_intr_point->id)}}" class="fa fa-eye"></a>--}}
-                                    <a href="{{route('descriptions.edit', $text_block->id)}}" class="text-yellow fa fa-pencil"></a>
+                                    <a href="{{route('descriptions.edit', $text_block->id)}}" class="text-yellow fas fa-pen-alt" style="float:left;"></a>
+                                    <span style="float:left;">&emsp;or&emsp;</span>
                                     {{ Form::open(['route'=>['descriptions.destroy', $text_block->id], 'method'=>'delete']) }}
-                                    <button onclick="return confirm('are you sure?')" type="submit" class="delete">
-                                        <i class="text-red fa fa-remove"></i>
-                                    </button>
+                                    <a onclick="return confirm('are you sure?')" type="submit" class="delete" style="float:left; cursor: pointer">
+                                        <i class="text-red fas fa-trash-alt"></i>
+                                    </a>
                                     {{ Form::close() }}
                                 </td>
                             </tr>

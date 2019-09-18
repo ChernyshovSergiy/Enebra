@@ -1,23 +1,21 @@
-@extends('admin.layout')
+@extends('adminlte::page')
+
+@section('title', 'Pages')
+
+@section('content_header')
+    <h1>
+        @lang('admin.listing_pages')
+        <small>@lang('admin.it_all_pages_here')</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="{{route('admin')}}"><i class="fas fa-fw fa-tachometer-alt"></i> @lang('admin.home')</a></li>
+        <li class="active">@lang('admin.listing_pages')</li>
+    </ol>
+@stop
 
 @section('content')
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                @lang('admin.listing_pages')
-                <small>@lang('admin.it_all_pages_here')</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> @lang('admin.home')</a></li>
-                <li class="active">@lang('admin.listing_pages')</li>
-            </ol>
-        </section>
-
-        <!-- Main content -->
-        <section class="content container-fluid">
+    <!-- Main content -->
+        <section class="content container-fluid" style="overflow-x:scroll;">
         {{ Form::open([
             'route' => 'inf_pages.store',
             'files' => true
@@ -64,29 +62,30 @@
                                 <td>{{ $page->id }}</td>
                                 <td>{{ $page->user->first_name .' '.$page->user->last_name }}</td>
                                 <td>{{ $page->getTitle() }}</td>
-                                <td>{!! $page->text ? str_limit($page->text->sub_title->$locale, 20 ) : '' !!}</td>
-                                <td>{!! $page->text ? str_limit($page->text->description->$locale, 20, ' &raquo') : '' !!}</td>
-                                <td>{!! $page->text ? str_limit($page->text->top_textarea->$locale, 20 ) : '' !!}</td>
-                                <td>{!! $page->text ? str_limit($page->text->left_textarea->$locale, 20 ) : '' !!}</td>
-                                <td>{!! $page->text ? str_limit($page->text->right_textarea->$locale, 20 ) : '' !!}</td>
+                                <td>{!! $page->text ? Str::limit($page->text->sub_title->$locale, 20 ) : '' !!}</td>
+                                <td>{!! $page->text ? Str::limit($page->text->description->$locale, 20, ' &raquo') : '' !!}</td>
+                                <td>{!! $page->text ? Str::limit($page->text->top_textarea->$locale, 20 ) : '' !!}</td>
+                                <td>{!! $page->text ? Str::limit($page->text->left_textarea->$locale, 20 ) : '' !!}</td>
+                                <td>{!! $page->text ? Str::limit($page->text->right_textarea->$locale, 20 ) : '' !!}</td>
                                 <td>{{ $page->views_count }}</td>
                                 <td>
                                     <img src="{{ $page->getImage() }}" alt="" width="70">
                                 </td>
                                 <td>{{ $page->menu }}</td>
                                 <td>{{ $page->if_desc }}</td>
-                                <td>{!! $page->text ? str_limit($page->text->text_description->$locale , 20) : '' !!}</td>
+                                <td>{!! $page->text ? Str::limit($page->text->text_description->$locale , 20) : '' !!}</td>
                                 <td>{{ $page->sort }}</td>
                                 <td>{{ $page->language->title }}</td>
-                                <td>{!! $page->text ? str_limit($page->text->keywords->$locale, 20 ) : '' !!}</td>
-                                <td>{!! $page->text ? str_limit($page->text->meta_desc->$locale, 20 ) : '' !!}</td>
+                                <td>{!! $page->text ? Str::limit($page->text->keywords->$locale, 20 ) : '' !!}</td>
+                                <td>{!! $page->text ? Str::limit($page->text->meta_desc->$locale, 20 ) : '' !!}</td>
                                 <td>{{ $page->meta_id }}</td>
                                 <td>
-                                    <a href="{{route('inf_pages.edit', $page->id)}}" class="text-yellow fa fa-pencil"></a>
+                                    <a href="{{route('inf_pages.edit', $page->id)}}" class="text-yellow fas fa-pen-alt" style="float:left;"></a>
+                                    <span style="float:left;">&emsp;or&emsp;</span>
                                     {{ Form::open(['route'=>['inf_pages.destroy', $page->id], 'method'=>'delete']) }}
-                                    <button onclick="return confirm('are you sure?')" type="submit" class="delete">
-                                        <i class="text-red fa fa-remove"></i>
-                                    </button>
+                                    <a onclick="return confirm('are you sure?')" type="submit" class="delete" style="float:left; cursor: pointer">
+                                        <i class="text-red fas fa-trash-alt"></i>
+                                    </a>
                                     {{ Form::close() }}
                                 </td>
                             </tr>
@@ -101,7 +100,16 @@
             {{Form::close()}}
         </section>
         <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-
 @endsection
+
+@section('css')
+    <link href="{{ asset( 'css/container_fluid.css' ) }}" rel="stylesheet"/>
+@stop
+
+@section('js')
+    <script>
+        $(function () {
+            $('#example1').DataTable()
+        })
+    </script>
+@stop

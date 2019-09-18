@@ -8,7 +8,7 @@
         <small>@lang('admin.dashboard')</small>
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> @lang('admin.home')</a></li>
+        <li><a href="#"><i class="fas fa-fw fa-tachometer-alt"></i> @lang('admin.home')</a></li>
         <li class="active">@lang('admin.dashboard')</li>
     </ol>
 @stop

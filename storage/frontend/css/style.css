@@ -3260,7 +3260,7 @@ margin-left: 10px;
   /*resister page*/
 .resister_table { font-family: 'RobotoMedium', sans-serif;color: #565656;font-size: 16px;border-collapse: separate;border-spacing: 0 5px;margin-left: 0;}
 .table_chron_icons {
-    background: url(img/chronpage.png);
+    background: url(../img/chronpage.png);
     display: inline-block;
     vertical-align: initial;
     zoom: .6;
@@ -3268,7 +3268,7 @@ margin-left: 10px;
 }
 .thwidth{    width: 280px;}
 .create_icon {
-    background: url(img/create_icon.png);
+    background: url(../img/create_icon.png);
     display: inline-block;
     vertical-align: middle;
     margin-right: 5px;
@@ -3436,7 +3436,7 @@ margin-left: 10px;
     -moz-box-shadow: 2px 2px 15px 2px rgba(142,151,157,1);
     box-shadow: 2px 2px 15px 2px rgba(142,151,157,1);
     font-size: 18px;
-    background: url(/img/patmod.png)repeat center center;
+    background: url(../img/patmod.png)repeat center center;
     padding: 10px 12px;
     border-radius: 7px;
     -webkit-border-radius: 7px;
@@ -5187,7 +5187,7 @@ h2{    font-size: 25px;}
     position: fixed;
     bottom: 10%;
     right: 20px;
-    background: url('/img/arrow-up.png') no-repeat;
+    background: url(../img/arrow-up.png) no-repeat;
     cursor: pointer;
     z-index: 20;
 }
@@ -5195,7 +5195,7 @@ h2{    font-size: 25px;}
     padding: 0;
     width: 112px;
     height: 112px;
-    background: url(/img/circle.png);
+    background: url(../img/circle.png);
     display: table-cell;
     padding-top: 23px;
     color: #bfd9fd;

@@ -11,7 +11,7 @@
                 <small>@lang('admin.it_all_social_links_here')</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> @lang('admin.home')</a></li>
+                <li><a href="{{route('admin')}}"><i class="fas fa-fw fa-tachometer-alt"></i> @lang('admin.home')</a></li>
                 <li class="active">@lang('admin.listing_social_links')</li>
             </ol>
         </section>
@@ -63,11 +63,12 @@
                                         <img src="{{ $social_link->getImage() }}" alt="" width="30">
                                     </td>
                                     <td>
-                                        <a href="{{route('social_links.edit', $social_link->id)}}" class="text-yellow fa fa-pencil"></a>
+                                        <a href="{{route('social_links.edit', $social_link->id)}}" class="text-yellow fas fa-pen-alt" style="float:left;"></a>
+                                        <span style="float:left;">&emsp;or&emsp;</span>
                                         {{ Form::open(['route'=>['social_links.destroy', $social_link->id], 'method'=>'delete']) }}
-                                        <button onclick="return confirm('are you sure?')" type="submit" class="delete">
-                                        <i class="text-red fa fa-remove"></i>
-                                        </button>
+                                        <a onclick="return confirm('are you sure?')" type="submit" class="delete" style="float:left; cursor: pointer">
+                                            <i class="text-red fas fa-trash-alt"></i>
+                                        </a>
                                         {{ Form::close() }}
                                     </td>
                                 </tr>
