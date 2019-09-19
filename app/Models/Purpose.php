@@ -24,6 +24,9 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Purpose whereSort($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Purpose whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Purpose newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Purpose newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Purpose query()
  */
 class Purpose extends Model
 {
@@ -34,6 +37,7 @@ class Purpose extends Model
         'menu_id',
         'sort'
     ];
+    public $timestamps = false;
 
     public function getPageTitle():string
     {

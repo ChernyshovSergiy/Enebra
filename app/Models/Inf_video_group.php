@@ -27,6 +27,11 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_video_group whereMenuId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_video_group whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read int|null $video_group_sections_count
+ * @property-read int|null $videos_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_video_group newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_video_group newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_video_group query()
  */
 class Inf_video_group extends Model
 {
@@ -42,6 +47,7 @@ class Inf_video_group extends Model
         'keywords',
         'meta_desc'
     ];
+    public $timestamps = false;
 
     public function getTextColumnsForTranslate() :array
     {

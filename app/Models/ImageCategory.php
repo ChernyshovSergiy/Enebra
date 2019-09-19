@@ -21,6 +21,7 @@ class ImageCategory extends Model
     protected $fillable = [
         'title'
     ];
+    public $timestamps = false;
 
     public function updateImageCategory($request, $id):void
     {

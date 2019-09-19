@@ -1,22 +1,18 @@
 @extends('adminlte::page')
 
+@section('content_header')
+    <h1>
+        @lang('admin.edit_question')
+        <small>@lang('admin.it_edit_question_here')</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="{{route('admin')}}"><i class="fas fa-fw fa-tachometer-alt"></i> @lang('admin.home')</a></li>
+        <li><a href="{{route('faq_questions.index')}}"><i class="fas fa-question-circle"></i> @lang('admin.listing_questions')</a></li>
+        <li class="active">@lang('admin.edit_question')</li>
+    </ol>
+@stop
+
 @section('content')
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                @lang('admin.edit_question')
-                <small>@lang('admin.it_edit_question_here')</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="{{route('admin')}}"><i class="fas fa-fw fa-tachometer-alt"></i> @lang('admin.home')</a></li>
-                <li><a href="{{route('faq_questions.index')}}"><i class="fa fa-question-circle"></i> @lang('admin.listing_questions')</a></li>
-                <li class="active">@lang('admin.edit_question')</li>
-            </ol>
-        </section>
-
         <!-- Main content -->
         <section class="content">
         {{ Form::open(['route' => ['faq_questions.update', $question->id], 'method'=>'put']) }}
@@ -68,7 +64,13 @@
             {{ Form::close() }}
         </section>
         <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-
 @endsection
+
+@section('js')
+    <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+    <script>
+        $(function () {
+            CKEDITOR.replaceAll();
+        })
+    </script>
+@stop

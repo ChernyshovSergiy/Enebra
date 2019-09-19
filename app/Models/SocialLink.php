@@ -27,6 +27,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\SocialLink whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\SocialLink whereUrl($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\SocialLink newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\SocialLink newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\SocialLink query()
  */
 class SocialLink extends Model
 {
@@ -38,6 +41,7 @@ class SocialLink extends Model
         'sort',
         'image_id'
     ];
+    public $timestamps = false;
 
     public static function addSocialLink($fields) :void
     {

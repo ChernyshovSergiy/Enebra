@@ -35,6 +35,9 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Image whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Image whereUserId($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Image newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Image newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Image query()
  */
 class Image extends Model
 {

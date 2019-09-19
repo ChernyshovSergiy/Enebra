@@ -2,10 +2,17 @@
 
 namespace App\Models;
 
+use App\Traits\Relations\HasMany\Images;
+use App\Traits\Relations\HasMany\InfPages;
+use App\Traits\Relations\HasMany\Languages;
+use App\Traits\Relations\HasMany\UserFAQAnswers;
+use App\Traits\Relations\HasMany\UserFaqQuestions;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Translation\HasLocalePreference;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
 
 /**
  * App\Models\User
@@ -37,8 +44,18 @@ use Illuminate\Contracts\Translation\HasLocalePreference;
  * @property int $language_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Image[] $avatar
+ * @property-read int|null $avatar_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Faq_answer[] $faq_answers
+ * @property-read int|null $faq_answers_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Faq_question[] $faq_questions
+ * @property-read int|null $faq_questions_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Language[] $language
+ * @property-read int|null $language_count
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Inf_page[] $page
+ * @property-read int|null $page_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User query()
@@ -73,7 +90,12 @@ use Illuminate\Contracts\Translation\HasLocalePreference;
  */
 class User extends Authenticatable implements MustVerifyEmail, HasLocalePreference
 {
-    use Notifiable;
+    use Notifiable,
+        Languages,
+        InfPages,
+        Images,
+        UserFAQAnswers,
+        UserFaqQuestions;
 
     protected $fillable = [
         'name', 'email', 'password',
@@ -90,5 +112,34 @@ class User extends Authenticatable implements MustVerifyEmail, HasLocalePreferen
     public function preferredLocale()
     {
         return $this->locale;
+    }
+
+    public function getUserNames() :array
+    {
+        $locale = LaravelLocalization::getCurrentLocale();
+        $lang_id = Language::whereSlug($locale)->first();
+        $users = self::all();
+        $user_names = [];
+        foreach($users as $user){
+            if ($lang_id->id === $user->language_id){
+                $user_names[$user->id] = $user->first_name. ' '. $user->last_name;
+            } else{
+                $user_names[$user->id] = $user->first_name_en. ' '. $user->last_name_en;
+            }
+        }
+        return $user_names;
+    }
+
+    public static function getFullName($id) :string
+    {
+        $locale = LaravelLocalization::getCurrentLocale();
+        $lang_id = Language::whereSlug($locale)->first();
+        $user = self::find($id);
+        if ($lang_id->id === $user->language_id){
+            return $user->first_name. ' '. $user->last_name;
+        }
+        return $user->first_name_en. ' '. $user->last_name_en;
+
+
     }
 }

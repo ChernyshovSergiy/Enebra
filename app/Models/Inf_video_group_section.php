@@ -25,6 +25,10 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_video_group_section whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_video_group_section whereVideoGroupId($value)
  * @mixin \Eloquent
+ * @property-read int|null $videos_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_video_group_section newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_video_group_section newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_video_group_section query()
  */
 class Inf_video_group_section extends Model
 {
@@ -34,6 +38,7 @@ class Inf_video_group_section extends Model
         'title',
         'video_group_id'
     ];
+    public $timestamps = false;
 
     public function createNewVideoGroupSection($request) :void
     {

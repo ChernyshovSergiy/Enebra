@@ -35,6 +35,9 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Faq_answer whereUserId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Faq_answer whereViews($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Faq_answer newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Faq_answer newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Faq_answer query()
  */
 class Faq_answer extends Model
 {

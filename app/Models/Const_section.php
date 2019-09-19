@@ -26,6 +26,10 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Const_section whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Const_section whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read int|null $const_articles_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Const_section newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Const_section newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Const_section query()
  */
 class Const_section extends Model
 {
@@ -36,6 +40,7 @@ class Const_section extends Model
         'menu_id',
         'sort'
     ];
+    public $timestamps = false;
 
     public function getPageTitle():string
     {

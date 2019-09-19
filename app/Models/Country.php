@@ -29,6 +29,22 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $lang
+ * @property string $lang_name
+ * @property string $country_alpha2_code
+ * @property string $country_alpha3_code
+ * @property string $country_numeric_code
+ * @property string $country_name
+ * @property-read int|null $id_documents_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country whereCountryAlpha2Code($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country whereCountryAlpha3Code($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country whereCountryName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country whereCountryNumericCode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country whereLang($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Country whereLangName($value)
  */
 class Country extends Model
 {
@@ -39,6 +55,7 @@ class Country extends Model
         'name',
         'image_id'
     ];
+    public $timestamps = false;
 
     public function addCountry($fields) :void
     {

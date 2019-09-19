@@ -23,6 +23,9 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_introduction whereTitleId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_introduction whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_introduction newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_introduction newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_introduction query()
  */
 class Inf_introduction extends Model
 {
@@ -38,6 +41,7 @@ class Inf_introduction extends Model
         'replica',
         'conclusion'
     ];
+    public $timestamps = false;
 
     public function getTextColumnsForTranslate(): array
     {

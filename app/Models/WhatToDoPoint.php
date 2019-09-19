@@ -29,6 +29,9 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\WhatToDoPoint whereSort($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\WhatToDoPoint whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\WhatToDoPoint newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\WhatToDoPoint newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\WhatToDoPoint query()
  */
 class WhatToDoPoint extends Model
 {
@@ -41,6 +44,7 @@ class WhatToDoPoint extends Model
         'sort'
     ];
 
+    public $timestamps = false;
 
     public function getPageTitle():string
     {

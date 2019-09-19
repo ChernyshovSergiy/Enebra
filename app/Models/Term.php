@@ -12,6 +12,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property mixed|null $content
  * @property int|null $views_count
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Term newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Term newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Term query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Term whereContent($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Term whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Term whereViewsCount($value)
  */
 class Term extends Model
 {

@@ -30,6 +30,9 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_plan_section_point whereSort($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_plan_section_point whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_plan_section_point newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_plan_section_point newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_plan_section_point query()
  */
 class Inf_plan_section_point extends Model
 {

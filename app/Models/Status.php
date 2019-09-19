@@ -16,9 +16,14 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Status whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Status whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Status newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Status newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Status query()
  */
 class Status extends Model
 {
+    public $timestamps = false;
+
     public static function getStatuses()
     {
         return self::select('id')->get();

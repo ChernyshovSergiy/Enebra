@@ -20,6 +20,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_id_document whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_id_document whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read int|null $countries_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_id_document newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_id_document newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_id_document query()
  */
 class Inf_id_document extends Model
 {
@@ -28,6 +32,7 @@ class Inf_id_document extends Model
     protected $fillable = [
         'name'
     ];
+    public $timestamps = false;
 
     public function addIdDocument($request) :void
     {

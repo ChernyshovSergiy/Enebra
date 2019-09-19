@@ -29,6 +29,9 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_video whereVideoGroupId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_video whereVideoGroupSectionId($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_video newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_video newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_video query()
  */
 class Inf_video extends Model
 {

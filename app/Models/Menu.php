@@ -41,6 +41,15 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Menu whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Menu whereUrl($value)
  * @mixin \Eloquent
+ * @property-read int|null $const_sections_count
+ * @property-read int|null $desc_block_count
+ * @property-read int|null $faq_questions_count
+ * @property-read int|null $purpose_count
+ * @property-read int|null $title_count
+ * @property-read int|null $what_to_do_points_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Menu newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Menu newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Menu query()
  */
 class Menu extends Model
 {

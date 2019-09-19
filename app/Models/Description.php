@@ -33,6 +33,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Description whereSort($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Description whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Description newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Description newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Description query()
  */
 class Description extends Model
 {
@@ -58,6 +61,7 @@ class Description extends Model
         'link_text',
         'link',
     ];
+    public $timestamps = false;
 
     public function getTextColumnsForTranslate() :array
     {

@@ -27,6 +27,9 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Const_article whereSort($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Const_article whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Const_article newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Const_article newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Const_article query()
  */
 class Const_article extends Model
 {

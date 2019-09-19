@@ -19,6 +19,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_status_message whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_status_message whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_status_message newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_status_message newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_status_message query()
  */
 class Inf_status_message extends Model
 {

@@ -23,6 +23,9 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_introduction_point whereSort($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_introduction_point whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_introduction_point newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_introduction_point newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_introduction_point query()
  */
 class Inf_introduction_point extends Model
 {
@@ -38,6 +41,7 @@ class Inf_introduction_point extends Model
         'link_id',
         'sort'
     ];
+    public $timestamps = false;
 
     public function getLinkPageTitle()
     {

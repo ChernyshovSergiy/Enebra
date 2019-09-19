@@ -7,7 +7,7 @@ use App\Http\Requests\Admin\ImageCategories\ValidateRequest;
 use App\Models\ImageCategory;
 use Illuminate\Http\Request;
 
-class ImageCategoryController extends Controller
+class ImageCategoriesController extends Controller
 {
     public $model;
 

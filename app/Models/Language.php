@@ -28,6 +28,11 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Language whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Language whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $flag_country
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Language newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Language newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Language query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Language whereFlagCountry($value)
  */
 class Language extends Model
 {
@@ -39,6 +44,8 @@ class Language extends Model
         'localization',
         'flag_image_id'
     ];
+
+    public $timestamps = false;
 
     public function addNewLanguage($request): void
     {

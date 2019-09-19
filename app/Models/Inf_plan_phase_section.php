@@ -22,6 +22,11 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_plan_phase_section whereSubTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_plan_phase_section whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read int|null $countries_count
+ * @property-read int|null $plan_points_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_plan_phase_section newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_plan_phase_section newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_plan_phase_section query()
  */
 class Inf_plan_phase_section extends Model
 {
@@ -30,6 +35,7 @@ class Inf_plan_phase_section extends Model
     protected $fillable = [
         'sub_title'
     ];
+    public $timestamps = false;
 
     public function createNewPhaseSection($request) :void
     {

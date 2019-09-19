@@ -26,6 +26,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_contact_message whereStatusId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_contact_message whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_contact_message newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_contact_message newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_contact_message query()
  */
 class Inf_contact_message extends Model
 {

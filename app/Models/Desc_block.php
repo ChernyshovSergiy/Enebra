@@ -25,6 +25,10 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Desc_block whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Desc_block whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read int|null $description_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Desc_block newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Desc_block newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Desc_block query()
  */
 class Desc_block extends Model
 {
@@ -35,6 +39,7 @@ class Desc_block extends Model
         'menu_id',
         'sort'
     ];
+    public $timestamps = false;
 
     public function getPageTitle():string
     {

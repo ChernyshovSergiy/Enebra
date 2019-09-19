@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property-read \App\Models\Image $image
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_social_network_link newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_social_network_link newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_social_network_link query()
  */
 class Inf_social_network_link extends Model
 {

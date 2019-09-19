@@ -18,8 +18,11 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Sex whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Sex whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Sex newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Sex newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Sex query()
  */
 class Sex extends Model
 {
-    //
+    public $timestamps = false;
 }

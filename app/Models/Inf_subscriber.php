@@ -10,6 +10,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Lang;
 use Mail;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Illuminate\Support\Str;
 
 /**
  * App\Models\Inf_subscriber
@@ -28,6 +29,9 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_subscriber whereToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_subscriber whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_subscriber newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_subscriber newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_subscriber query()
  */
 class Inf_subscriber extends Model
 {
@@ -93,7 +97,7 @@ class Inf_subscriber extends Model
         return Lang::get('status.wait');
     }
 
-    public static function add($email)
+    public static function add($email): Inf_subscriber
     {
         $sub = new static;
         $sub->email = $email;
@@ -104,7 +108,7 @@ class Inf_subscriber extends Model
 
     public function generateToken(): void
     {
-        $this->token = str_random(100);
+        $this->token = Str::random(100);
         $this->save();
     }
 
@@ -130,7 +134,7 @@ class Inf_subscriber extends Model
         return Language::find($id)->slug;
     }
 
-    public function removeSubscriber($id): void
+    public function removeSubscriber($id)
     {
         $subscriber = self::find($id);
         $subscriber->delete();

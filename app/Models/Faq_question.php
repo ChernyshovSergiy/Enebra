@@ -30,6 +30,10 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Faq_question whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Faq_question whereUserId($value)
  * @mixin \Eloquent
+ * @property-read int|null $faq_answers_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Faq_question newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Faq_question newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Faq_question query()
  */
 class Faq_question extends Model
 {

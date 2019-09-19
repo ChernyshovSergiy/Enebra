@@ -45,6 +45,9 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_page whereUserId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_page whereViewsCount($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_page newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_page newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Inf_page query()
  */
 class Inf_page extends Model
 {
@@ -67,6 +70,7 @@ class Inf_page extends Model
         'keywords',
         'meta_desc',
     ];
+    public $timestamps = false;
 
     public function getTextColumnsForTranslate() :array
     {
