@@ -16,10 +16,10 @@
 @section('content')
     <!-- Main content -->
     <section class="content">
-    {{ Form::open([
-        'route' => 'images.store',
-        'files' => true
-    ]) }}
+{{--    {{ Form::open([--}}
+{{--        'route' => 'images.store',--}}
+{{--        'files' => true--}}
+{{--    ]) }}--}}
         <!-- Default box -->
         <div class="box">
             <div class="box-header">
@@ -56,11 +56,11 @@
                                     {{--<a href="{{route('images.show', $image->id)}}" class="fa fa-eye"></a>--}}
                                     <a href="{{route('images.edit', $image->id)}}" class="text-yellow fas fa-pen-alt" style="float:left;"></a>
                                     <span style="float:left;">&emsp;or&emsp;</span>
-                                    {{ Form::open(['route'=>['images.destroy', $image->id], 'method'=>'delete']) }}
+                                    {!! Form::open(['route'=>['images.destroy', $image->id], 'method'=>'delete'])  !!}
                                     <a onclick="return confirm('are you sure?')" type="submit" class="delete" style="float:left; cursor: pointer">
                                         <i class="text-red fas fa-trash-alt"></i>
                                     </a>
-                                    {{ Form::close() }}
+                                    {!! Form::close() !!}
                                 </td>
                             </tr>
                         @endforeach
@@ -71,7 +71,7 @@
             <!-- /.box-body -->
         </div>
         <!-- /.box -->
-    {{Form::close()}}
+{{--    {{Form::close()}}--}}
     </section>
     <!-- /.content -->
 @endsection

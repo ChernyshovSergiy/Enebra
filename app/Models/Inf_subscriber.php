@@ -134,10 +134,13 @@ class Inf_subscriber extends Model
         return Language::find($id)->slug;
     }
 
-    public function removeSubscriber($id)
+    public function removeSubscriber($id): void
     {
         $subscriber = self::find($id);
-        $subscriber->delete();
+        try {
+            $subscriber->delete();
+        } catch (\Exception $e) {
+        }
     }
 
     public function addSubs($request): void

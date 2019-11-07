@@ -45,7 +45,6 @@ class SubscribersController extends Controller
 
     public function destroy($id)
     {
-        dd($id);
         $this->model->removeSubscriber($id);
 
         return redirect()->route('subscribers.index');

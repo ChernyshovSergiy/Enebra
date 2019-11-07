@@ -42,7 +42,7 @@ class Language extends Model
         'slug',
         'title',
         'localization',
-        'flag_image_id'
+        'flag_country'
     ];
 
     public $timestamps = false;
@@ -68,11 +68,10 @@ class Language extends Model
 
     public function getFlagImage(): string
     {
-        if ($this->flag_image_id === null){
+        if ($this->flag_country === null){
             return '/img/no-image.png';
         }
-        return '/uploads/'. $this->flag_image->image_category->title
-            .'/'. $this->flag_image->image;
+        return '/uploads/flags_svg/'. $this->flag_country.'.svg';
     }
 
     public function active()

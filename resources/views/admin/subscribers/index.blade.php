@@ -16,10 +16,6 @@
 @section('content')
     <!-- Main content -->
     <section class="content">
-    {{ Form::open([
-        'route' => 'subscribers.index',
-        'files' => true
-    ]) }}
     <!-- Default box -->
         <div class="box">
             <div class="box-header">
@@ -72,7 +68,6 @@
             <!-- /.box-body -->
         </div>
         <!-- /.box -->
-        {{Form::close()}}
     </section>
     <!-- /.content -->
 @endsection

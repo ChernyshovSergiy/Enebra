@@ -16,10 +16,10 @@
 @section('content')
     <!-- Main content -->
     <section class="content">
-    {{ Form::open([
-        'route' => 'languages.store',
-        'files' => true
-    ]) }}
+{{--    {{ Form::open([--}}
+{{--        'route' => 'languages.store',--}}
+{{--        'files' => true--}}
+{{--    ]) }}--}}
     <!-- Default box -->
         <div class="box">
             <div class="box-header">
@@ -77,7 +77,7 @@
             <!-- /.box-body -->
         </div>
         <!-- /.box -->
-        {{Form::close()}}
+{{--        {{Form::close()}}--}}
     </section>
     <!-- /.content -->
 @endsection
